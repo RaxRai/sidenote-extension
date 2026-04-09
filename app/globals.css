@@ -158,3 +158,21 @@ body {
 .text-link:hover {
   color: var(--link-hover);
 }
+
+.text-link--with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  text-decoration: none;
+}
+
+.text-link--with-icon span {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.text-link--with-icon svg {
+  flex-shrink: 0;
+  width: 1.125em;
+  height: 1.125em;
+}
