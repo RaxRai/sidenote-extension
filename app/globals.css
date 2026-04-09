@@ -176,3 +176,43 @@ body {
   width: 1.125em;
   height: 1.125em;
 }
+
+.privacy {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.privacy h2 {
+  margin: 0 0 0.85rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.privacy-body p {
+  margin: 0 0 0.9em;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.privacy-body p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-body .muted {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.inline-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.88em;
+  padding: 0.12em 0.35em;
+  border-radius: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}

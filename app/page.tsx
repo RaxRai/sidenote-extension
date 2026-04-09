@@ -64,6 +64,28 @@ export default function Home() {
           <span>Source code</span>
         </a>
       </div>
+
+      <section className="privacy" id="privacy" aria-labelledby="privacy-heading">
+        <h2 id="privacy-heading">Privacy</h2>
+        <div className="privacy-body">
+          <p>
+            SideNote doesn’t collect personal information, run analytics, or send
+            your notes anywhere. Content is stored with Chrome’s{" "}
+            <code className="inline-code">storage</code> API on your device only—we
+            don’t operate servers for the extension, and there’s no sign-in or sync
+            built in.
+          </p>
+          <p>
+            We don’t sell or share data because we don’t have access to it. If you
+            export a file, that’s entirely on your machine; we never see it.
+          </p>
+          <p className="muted">
+            Chrome and the Web Store have their own policies; this section only
+            describes what SideNote itself does. If that ever changes, this page
+            will be updated.
+          </p>
+        </div>
+      </section>
     </main>
   );
 }
