@@ -1,0 +1,244 @@
+/*
+ * Theming: defaults match light mode; dark via prefers-color-scheme.
+ * Override anytime: <html data-theme="light"> or data-theme="dark">
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Light (default) */
+:root {
+  color-scheme: light;
+  --color-bg: #f2f3f5;
+  --color-surface: #e8eaef;
+  --color-text: #1c1d21;
+  --color-text-muted: #5f6673;
+  --color-border: rgba(0, 0, 0, 0.12);
+  --color-btn: rgba(0, 0, 0, 0.04);
+  --color-btn-hover: rgba(0, 0, 0, 0.08);
+  --color-btn-pressed: rgba(0, 0, 0, 0.12);
+  --color-accent-bg: rgba(26, 115, 232, 0.14);
+  --color-accent-border: rgba(26, 115, 232, 0.4);
+  --color-scrollbar: rgba(0, 0, 0, 0.22);
+  --color-scrollbar-hover: rgba(0, 0, 0, 0.34);
+  --color-chip-bg: rgba(26, 115, 232, 0.08);
+  --color-chip-bg-hover: rgba(26, 115, 232, 0.12);
+  --color-chip-border: rgba(26, 115, 232, 0.28);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-bg: #1e1f23;
+    --color-surface: #2a2c31;
+    --color-text: #e8eaed;
+    --color-text-muted: #9aa0a8;
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-btn: rgba(255, 255, 255, 0.06);
+    --color-btn-hover: rgba(255, 255, 255, 0.1);
+    --color-btn-pressed: rgba(255, 255, 255, 0.14);
+    --color-accent-bg: rgba(138, 180, 248, 0.22);
+    --color-accent-border: rgba(138, 180, 248, 0.45);
+    --color-scrollbar: rgba(255, 255, 255, 0.14);
+    --color-scrollbar-hover: rgba(255, 255, 255, 0.22);
+    --color-chip-bg: rgba(138, 180, 248, 0.12);
+    --color-chip-bg-hover: rgba(138, 180, 248, 0.16);
+    --color-chip-border: rgba(138, 180, 248, 0.35);
+  }
+}
+
+/* Manual override (optional; set on <html>) */
+html[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #f2f3f5;
+  --color-surface: #e8eaef;
+  --color-text: #1c1d21;
+  --color-text-muted: #5f6673;
+  --color-border: rgba(0, 0, 0, 0.12);
+  --color-btn: rgba(0, 0, 0, 0.04);
+  --color-btn-hover: rgba(0, 0, 0, 0.08);
+  --color-btn-pressed: rgba(0, 0, 0, 0.12);
+  --color-accent-bg: rgba(26, 115, 232, 0.14);
+  --color-accent-border: rgba(26, 115, 232, 0.4);
+  --color-scrollbar: rgba(0, 0, 0, 0.22);
+  --color-scrollbar-hover: rgba(0, 0, 0, 0.34);
+  --color-chip-bg: rgba(26, 115, 232, 0.08);
+  --color-chip-bg-hover: rgba(26, 115, 232, 0.12);
+  --color-chip-border: rgba(26, 115, 232, 0.28);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #1e1f23;
+  --color-surface: #2a2c31;
+  --color-text: #e8eaed;
+  --color-text-muted: #9aa0a8;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-btn: rgba(255, 255, 255, 0.06);
+  --color-btn-hover: rgba(255, 255, 255, 0.1);
+  --color-btn-pressed: rgba(255, 255, 255, 0.14);
+  --color-accent-bg: rgba(138, 180, 248, 0.22);
+  --color-accent-border: rgba(138, 180, 248, 0.45);
+  --color-scrollbar: rgba(255, 255, 255, 0.14);
+  --color-scrollbar-hover: rgba(255, 255, 255, 0.22);
+  --color-chip-bg: rgba(138, 180, 248, 0.12);
+  --color-chip-bg-hover: rgba(138, 180, 248, 0.16);
+  --color-chip-border: rgba(138, 180, 248, 0.35);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font: 14px/1.5 system-ui, -apple-system, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.shell {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.toolbar {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.toolbar-sep {
+  width: 1px;
+  height: 20px;
+  margin: 0 2px;
+  background: var(--color-border);
+}
+
+.toolbar-btn {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-btn);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.toolbar-btn:hover {
+  background: var(--color-btn-hover);
+}
+
+.toolbar-btn:active {
+  background: var(--color-btn-pressed);
+}
+
+.toolbar-btn.is-active {
+  background: var(--color-accent-bg);
+  border-color: var(--color-accent-border);
+  color: var(--color-text);
+}
+
+.toolbar-btn .u {
+  text-decoration: underline;
+}
+
+.toolbar-export {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.toolbar-export-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  user-select: none;
+}
+
+.toolbar-btn-export {
+  min-width: auto;
+  padding: 0 8px;
+  font-size: 12px;
+}
+
+.editor {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 16px;
+  overflow-y: auto;
+  outline: none;
+  line-height: 1.6;
+  background: transparent;
+}
+
+.editor:empty:before {
+  content: attr(data-placeholder);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.editor:focus {
+  outline: none;
+}
+
+.editor ul,
+.editor ol {
+  margin: 0.35em 0;
+  padding-left: 1.25em;
+}
+
+.editor li {
+  margin: 0.15em 0;
+}
+
+.editor .link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--color-chip-border);
+  background: var(--color-chip-bg);
+  color: var(--color-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.editor .link-chip:hover {
+  background: var(--color-chip-bg-hover);
+  text-decoration: none;
+}
+
+.editor::-webkit-scrollbar {
+  width: 6px;
+}
+
+.editor::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.editor::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar);
+  border-radius: 3px;
+}
+
+.editor::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scrollbar-hover);
+}

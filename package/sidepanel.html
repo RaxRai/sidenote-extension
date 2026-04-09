@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>SideNote</title>
+    <link rel="icon" href="icons/icon-32.png" sizes="32x32" type="image/png" />
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <div class="toolbar">
+        <button type="button" class="toolbar-btn" id="btn-bold" title="Bold" aria-pressed="false">
+          <strong>B</strong>
+        </button>
+        <button type="button" class="toolbar-btn" id="btn-italic" title="Italic" aria-pressed="false">
+          <em>I</em>
+        </button>
+        <button type="button" class="toolbar-btn" id="btn-underline" title="Underline" aria-pressed="false">
+          <span class="u">U</span>
+        </button>
+        <button type="button" class="toolbar-btn" id="btn-list" title="Bullet list" aria-pressed="false">
+          ul
+        </button>
+        <div class="toolbar-export" role="group" aria-label="Export">
+          <span class="toolbar-export-label">Export</span>
+          <button type="button" class="toolbar-btn toolbar-btn-export" id="btn-export-md" title="Export Markdown">
+            .md
+          </button>
+          <button type="button" class="toolbar-btn toolbar-btn-export" id="btn-export-txt" title="Export plain text">
+            .txt
+          </button>
+        </div>
+      </div>
+      <div
+        id="editor"
+        class="editor"
+        contenteditable="true"
+        spellcheck="true"
+        data-placeholder="Welcome, feel free to start typing here!"
+      ></div>
+    </div>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>
